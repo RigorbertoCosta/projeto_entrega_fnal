@@ -1,0 +1,28 @@
+#back-to-top{
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    border: none;
+    background-color: transparent;
+    }
+    
+    container-fluid {
+        background-color: #5f0093;
+        font-size: 150%;
+    }
+    
+    body {
+        background-color: #e6e5e7;
+    }
+    
+    element.style {
+        display: block;
+    }
+    
+    div .carousel-inner {
+        color: white;
+        width: 100%;
+        opacity: .5;
+        opacity: .9;
+        transition: opacity .15s ease;
+    }
