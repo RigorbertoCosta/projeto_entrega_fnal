@@ -15,9 +15,9 @@ function Register() {
     email: '',
     password: '',
     confirmpassword: '',
-    Bairro: '', // Adicionei o campo Bairro
-    localidade: '', // Adicionei o campo Cidade
-    uf: '', // Adicionei o campo Estado
+    Bairro: '', 
+    localidade: '',
+    uf: '',
   });
 
   const { register } = useContext(Context);

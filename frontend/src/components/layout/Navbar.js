@@ -11,10 +11,11 @@ function Navbar() {
 
   return (
     <nav className={styles.navbar}>
+
       <div className={styles.navbar_logo}>
-        <img src={Logo} alt="RR Street Wear" />
-        <h2>RR Street Wear</h2>
+        <Link to="/Home"><img src={Logo} alt="RR Street Wear" /></Link>       
       </div>
+      
       <ul>
         <li>
           <Link to="/">Casdastrar</Link>
