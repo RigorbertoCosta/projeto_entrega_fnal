@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import React, { useContext } from 'react'
 import styles from './Navbar.module.css'
-import Logo from '../../assets/img/logo.jpg'
+import Logo from '../../assets/img/logo_n.png'
 import { Context } from '../../context/UserContext'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
