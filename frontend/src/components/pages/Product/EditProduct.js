@@ -15,7 +15,7 @@ function EditProduct() {
     api
       .get(`/product/${id}`, {
         headers: {
-          Authorization: `Bearer ${JSON.parse(token)}`,
+          Authorization: `Bearer ${token}`,
         },
       })
       .then((response) => {
@@ -43,7 +43,7 @@ function EditProduct() {
     const data = await api
       .patch(`product/${product._id}`, formData, {
         headers: {
-          Authorization: `Bearer ${JSON.parse(token)}`,
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data',
         },
       })

@@ -22,7 +22,7 @@ function ProductDetails() {
     const data = await api
       .patch(`products/schedule/${product._id}`, {
         headers: {
-          Authorization: `Bearer ${JSON.parse(token)}`,
+          Authorization: `Bearer ${token}`,
         },
       })
       .then((response) => {
