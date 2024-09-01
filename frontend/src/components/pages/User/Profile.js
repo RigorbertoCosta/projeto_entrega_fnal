@@ -51,7 +51,7 @@ function Profile() {
     const data = await api
       .patch(`/users/${user._id}`, formData, {
         headers: {
-          Authorization: `Bearer ${JSON.parse(token)}`,
+          Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
           // 'Content-Type': 'multipart/form-data',
         },

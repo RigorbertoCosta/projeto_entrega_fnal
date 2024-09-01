@@ -168,6 +168,8 @@ module.exports = class UserController {
             return
         }
 
+        user.nome = nome
+
         if(!email){
             res.status(422).json({ message: 'O e-mail é obrigatório' })
             return
@@ -202,12 +204,7 @@ module.exports = class UserController {
         }
 
         try {
-
-            const updateUser = await User.findOneAndUpdate(
-                { _id: user._id },
-                { $set: user },
-                { new: true },
-            )
+            await User.updateOne({_id: user._id}, {$set: user})
 
             res.status(200).json({message: "Usuário atualizado com sucesso!"})
 
