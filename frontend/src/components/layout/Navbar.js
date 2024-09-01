@@ -17,9 +17,9 @@ function Navbar() {
       </div>
       
       <ul>
-        <li>
-          <Link to="/">Casdastrar</Link>
-        </li>
+        {/* <li> */}
+          {/* <Link to="/">Casdastrar</Link> */}
+        {/* </li> */}
         {authenticated ? (
           <>
             

@@ -1,4 +1,5 @@
 import React from 'react';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import carrossel1 from './img/carrossel1.jpg'; 
 import carrossel2 from './img/carrossel2.jpg'; 

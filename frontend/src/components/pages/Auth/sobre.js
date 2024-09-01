@@ -20,7 +20,7 @@ function Sobre (){
         </main>
 
          <div class="container my-4">
-            <img src={Logo} alt="Descrição da imagem" className="d-block w-100"/>
+            <img src={Logo} alt="Descrição da imagem" className="d-block mx-auto w-50"/>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
