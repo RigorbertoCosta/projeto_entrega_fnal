@@ -36,6 +36,9 @@ function Navbar() {
             <li>
               <Link to="/register">Registar</Link>
             </li>
+            <li>
+              <Link to="/sobre">Sobre</Link>
+            </li>
           </>
         )}
       </ul>

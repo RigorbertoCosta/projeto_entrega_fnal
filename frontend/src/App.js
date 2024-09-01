@@ -9,11 +9,12 @@ import Login from './components/pages/Auth/Login'
 import Register from './components/pages/Auth/register'
 import Profile from './components/pages/User/Profile'
 import { UserProvider } from './context/UserContext'
-import MyProduct from './components/pages/Product/MyProduct'
 import AddProduct from './components/pages/Product/AddProduct'
 import EditProduct from './components/pages/Product/EditProduct'
 import ProductDetails from './components/pages/Product/ProductDetails'
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import Sobre from './components/pages/Auth/sobre'
 
 function App() {
   return (
@@ -26,11 +27,11 @@ function App() {
             <Route path="/login" element={<Login />}> </Route>
             <Route path="/register" element={<Register />}></Route>
             <Route path="/user/profile" element={<Profile />}></Route>
-            <Route path="/product/myproduct" element={<MyProduct />}></Route>
             <Route path="/product/add" element={<AddProduct />}></Route>
             <Route path="/product/edit/:id" element={<EditProduct />}></Route>
             <Route path="/product" element={<ProductDetails />}></Route>
             <Route path="/Home" element={<Home />}></Route>
+            <Route path="/Sobre" element={<Sobre />}></Route>
           </Routes>
         </Container>
         <Footer />
