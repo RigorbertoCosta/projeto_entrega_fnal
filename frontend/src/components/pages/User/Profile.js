@@ -7,16 +7,18 @@ import useFlashMessage from '../../../hooks/useFlashMessage'
 import RoundedImage from '../../layout/RoundedImage'
 
 function Profile() {
+  const tokenStorage = localStorage.getItem('token')
+    
   const [user, setUser] = useState({})
   const [preview, setPreview] = useState()
-  const [token] = useState(localStorage.getItem('token') || '')
+  const [token] = useState(tokenStorage || '')
   const { setFlashMessage } = useFlashMessage()
 
   useEffect(() => {
     api
-      .post('/users/checkuser', {
+      .post('/users/checkuser', {}, {
         headers: {
-          Authorization: `Bearer ${JSON.parse(token)}`,
+          Authorization: `Bearer ${token}`,
         },
       })
       .then((response) => {

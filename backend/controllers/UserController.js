@@ -109,8 +109,6 @@ module.exports = class UserController {
         try {
             let currentUser
     
-            console.log(req.headers.authorization)
-    
             if(req.headers.authorization) {
     
                 const token = getToken(req)
