@@ -13,7 +13,7 @@ function Navbar() {
     <nav className={styles.navbar}>
 
       <div className={styles.navbar_logo}>
-        <Link to="/Home"><img src={Logo} alt="RR Street Wear" /></Link>       
+        <Link to="/"><img src={Logo} alt="RR Street Wear" /></Link>       
       </div>
       
       <ul>
