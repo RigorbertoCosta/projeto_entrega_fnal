@@ -29,6 +29,8 @@ export default function useAuth() {
         return response.data
       })
 
+
+
       await authUser(data)
     } catch (error) {
       
