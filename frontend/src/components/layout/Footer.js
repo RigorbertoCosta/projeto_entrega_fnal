@@ -11,13 +11,13 @@ function Footer() {
           <strong>RR_StreetWear</strong> &copy; 2023
         </p>
         <div className={styles.socialLinks}>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+          {/* <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
             <img src={FacebookLogo} alt="Facebook" />
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+          </a> */}
+          <a href="https://instagram.com/rr__streetwear" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
             <img src={InstagramLogo} alt="Instagram" />
           </a>
-          <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
+          <a href="https://chat.whatsapp.com/JPUBKRhrN3v9IWpIrvOach" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
             <img src={WhatsAppLogo} alt="WhatsApp" />
           </a>
         </div>

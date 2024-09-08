@@ -393,7 +393,7 @@ function Home() {
     return (
         <div>
             <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
-                <div className="carousel-inner">
+                <div className="carousel-inner" data-bs-interval='2000'>
                     <div className="carousel-item active">
                         <img src={carrossel1} className="d-block w-100" alt="Imagem 1" />
                     </div>
@@ -443,17 +443,18 @@ function Home() {
                             <div className="mb-3">
                                 <label htmlFor="categorySelect" className="form-label">Categoria</label>
                                 <select className="form-select" id="categorySelect">
-                                    <option value="">Todas</option>
                                     <option value="camisetas">Camisetas</option>
                                     <option value="calcas">Calças</option>
-                                    <option value="jaquetas">Jaquetas</option>
+                                    <option value="jaquetas">Moletons</option>
+                                    <option value="jaquetas">Bonés</option>
+                                    <option value="jaquetas">Bermudas</option>
                                 </select>
                             </div>
-                            <div className="mb-3">
+                            {/* <div className="mb-3">
                                 <label htmlFor="priceRange" className="form-label">Faixa de Preço</label>
                                 <input type="range" className="form-range" id="priceRange" min="0" max="500" step="10" />
                                 <p>Preço: R$ <span id="priceValue">250</span></p>
-                            </div>
+                            </div> */}
                             <button type="submit" className="btn btn-primary">Aplicar Filtros</button>
                         </form>
                     </div>

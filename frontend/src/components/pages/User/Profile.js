@@ -72,8 +72,8 @@ function Profile() {
   return (
     <section>
       <div className={styles.profile_header}>
-        <h1>Perfil</h1>
-        {/* {(user.image || preview) && (
+        <h1>Perfil</h1> 
+        {(user.image || preview) && (
           <RoundedImage
             src={
               preview
@@ -82,7 +82,7 @@ function Profile() {
             }
             alt={user.name}
           />
-        )} */}
+        )}
       </div>
       <form onSubmit={handleSubmit} className={formStyles.form_container}>
         <Input
