@@ -5,6 +5,7 @@ export default function Bermudas() {
   const produtos = [
     {
       id: 1,
+      type: 'BERMUDA',
       title: "Bermuda HIGH Marrom",
       price: 99.90,
       rating: 5,
@@ -13,6 +14,7 @@ export default function Bermudas() {
     },
     {
       id: 2,
+      type: 'BERMUDA',
       title: "Bermuda HIGH Branca",
       price: 99.90,
       rating: 5,
@@ -21,6 +23,7 @@ export default function Bermudas() {
     },
     {
       id: 3,
+      type: 'BERMUDA',
       title: "Bermuda HIGH Preta",
       price: 99.90,
       rating: 5,
@@ -29,7 +32,8 @@ export default function Bermudas() {
     },
     {
       id: 4,
-      title: "Camisa High Bege",
+      type: 'BERMUDA',
+      title: "Bermuda High Bege",
       price: 99.90,
       rating: 5,
       brand: "High",

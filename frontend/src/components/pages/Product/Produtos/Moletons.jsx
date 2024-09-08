@@ -5,6 +5,7 @@ export default function Home() {
   const produtos = [
     {
       id: 17,
+      type: 'MOLETOM',
       title: "Moletom THRASHER",
       price: 129.90,
       rating: 5,
@@ -13,6 +14,7 @@ export default function Home() {
     },
     {
       id: 18,
+      type: 'MOLETOM',
       title: "Moletom THRASHER",
       price: 129.90,
       rating: 5,
@@ -21,6 +23,7 @@ export default function Home() {
     },
     {
       id: 19,
+      type: 'MOLETOM',
       title: "Moletom BRO NX",
       price: 129.90,
       rating: 5,
@@ -29,6 +32,7 @@ export default function Home() {
     },
     {
       id: 20,
+      type: 'MOLETOM',
       title: "Moletom HIGH",
       price: 129.90,
       rating: 5,

@@ -5,6 +5,7 @@ export default function Camisas() {
   const produtos = [
     {
       id: 13,
+      type: 'CAMISA',
       title: "Camisa High Preta",
       price: 59.90,
       rating: 5,
@@ -13,6 +14,7 @@ export default function Camisas() {
     },
     {
       id: 14,
+      type: 'CAMISA',
       title: "Camisa Santa Cruz",
       price: 59.90,
       rating: 5,
@@ -21,6 +23,7 @@ export default function Camisas() {
     },
     {
       id: 15,
+      type: 'CAMISA',
       title: "Camisa High",
       price: 59.90,
       rating: 5,
@@ -29,6 +32,7 @@ export default function Camisas() {
     },
     {
       id: 16,
+      type: 'CAMISA',
       title: "Camisa High",
       price: 59.90,
       rating: 5,

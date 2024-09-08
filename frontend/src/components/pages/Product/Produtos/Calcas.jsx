@@ -5,6 +5,7 @@ export default function Calcas() {
   const produtos = [
     {
       id: 9,
+      type: 'CALCA',
       title: "Calça Cargo HIGH",
       price: 109.90,
       rating: 5,
@@ -13,6 +14,7 @@ export default function Calcas() {
     },
     {
       id: 10,
+      type: 'CALCA',
       title: "Calça Cargo HIGH",
       price: 109.90,
       rating: 5,
@@ -21,6 +23,7 @@ export default function Calcas() {
     },
     {
       id: 11,
+      type: 'CALCA',
       title: "Calça Cargo HIGH",
       price: 109.90,
       rating: 5,
@@ -29,6 +32,7 @@ export default function Calcas() {
     },
     {
       id: 12,
+      type: 'CALCA',
       title: "Calça Cargo HIGH",
       price: 109.90,
       rating: 5,

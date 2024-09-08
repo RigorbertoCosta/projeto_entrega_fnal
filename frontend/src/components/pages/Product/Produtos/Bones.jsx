@@ -5,6 +5,7 @@ export default function Bones() {
   const produtos = [
     {
       id: 5,
+      type: 'BONE',
       title: "Boné Five Panel",
       price: 59.90,
       rating: 5,
@@ -13,6 +14,7 @@ export default function Bones() {
     },
     {
       id: 6,
+      type: 'BONE',
       title: "Boné Five Panel",
       price: 59.90,
       rating: 5,
@@ -21,6 +23,7 @@ export default function Bones() {
     },
     {
       id: 7,
+      type: 'BONE',
       title: "Boné Five Panel",
       price: 59.90,
       rating: 5,
@@ -29,6 +32,7 @@ export default function Bones() {
     },
     {
       id: 8,
+      type: 'BONE',
       title: "Boné Five Panel",
       price: 59.90,
       rating: 5,
