@@ -15,6 +15,7 @@ import ProductDetails from './components/pages/Product/ProductDetails'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import Sobre from './components/pages/Auth/sobre'
+import {CartProvider} from './components/pages/cart/carrinho'
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="/product" element={<ProductDetails />}></Route>
             <Route path="/" element={<Home />}></Route>
             <Route path="/Sobre" element={<Sobre />}></Route>
+            <Route path="/cart" element={<CartProvider />}></Route>
           </Routes>
         </Container>
         <Footer />

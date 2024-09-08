@@ -378,12 +378,13 @@
 
 // export default Home;
 
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import carrossel1 from "./img/carrossel1.jpg";
 import carrossel2 from "./img/carrossel2.jpg";
 import carrossel3 from "./img/carrossel3.jpg";
 import api from "../../utils/api";
+import { Context } from "../../context/UserContext";
 
 const productsInEmphasis = [
   {
@@ -425,6 +426,8 @@ const productsInEmphasis = [
 ];
 
 function Home() {
+    const { updateCarrinho } = useContext(Context)
+
     const [allProducts, setAllProducts] = useState([])
     const [productsToRender, setProductsToRender] = useState([])
     const [filter, setFilter] = useState('TODOS')
@@ -438,6 +441,24 @@ function Home() {
         } catch (error) {
             console.log(error)
         }
+    }
+
+    function adicionarAoCarrinho(produto) {
+        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+        let achado = false;
+        for (let i = 0; i < carrinho.length; i++) {
+            if (carrinho[i].id == produto.id) {
+                carrinho[i].quantity++;
+                achado = true;
+                break;
+            }
+        }
+        if (!achado) {
+            const item = { ...produto, quantity: 1 };
+            carrinho.push(item);
+        }
+        updateCarrinho(carrinho);
+        alert('Adicionado!');
     }
 
     useEffect(() => {
@@ -528,7 +549,7 @@ function Home() {
                   <p className="card-text">
                     R$ {produto.price.toFixed(2).replace(".", ",")}
                   </p>
-                  <a href="#" className="btn btn-primary">
+                  <a href="#" className="btn btn-primary" onClick={() => adicionarAoCarrinho(produto)}>
                     Comprar
                   </a>
                 </div>
@@ -581,7 +602,7 @@ function Home() {
                         <p className="card-text">
                             R$ {produto.price.toFixed(2).replace(".", ",")}
                         </p>
-                        <a href="#" className="btn btn-primary">
+                        <a href="#" className="btn btn-primary" onClick={() => adicionarAoCarrinho(produto)}>
                           Comprar
                         </a>
                       </div>

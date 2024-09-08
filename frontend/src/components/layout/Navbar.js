@@ -49,7 +49,7 @@
 // export default 
 
 import { Link } from 'react-router-dom'
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import styles from './Navbar.module.css'
 import Logo from '../../assets/img/logo_n.png'
 import { Context } from '../../context/UserContext'
@@ -58,9 +58,7 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function Navbar() {
-  const { authenticated, logout } = useContext(Context)
-  // Exemplo de número de itens no carrinho (você pode obter isso do contexto ou estado global)
-  const cartItemsCount = 3;
+  const { authenticated, logout, carrinho } = useContext(Context)
 
   return (
     <nav className={styles.navbar}>
@@ -82,7 +80,7 @@ function Navbar() {
               <Link to="/login">Entrar</Link>
             </li>
             <li>
-              <Link to="/register">Registar</Link>
+              <Link to="/register">Registrar</Link>
             </li>
             <li>
               <Link to="/sobre">Sobre</Link>
@@ -93,8 +91,8 @@ function Navbar() {
         <li className={styles.cartIcon}>
           <Link to="/cart">
             <FontAwesomeIcon icon={faShoppingCart} />
-            {cartItemsCount > 0 && (
-              <span className={styles.cartCount}>{cartItemsCount}</span>
+            {carrinho.length > 0 && (
+              <span className={styles.cartCount}>{carrinho.length}</span>
             )}
           </Link>
         </li>
