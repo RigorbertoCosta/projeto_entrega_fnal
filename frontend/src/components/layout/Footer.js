@@ -3,6 +3,9 @@ import FacebookLogo from '../../assets/img/facebook-logo.png'
 import InstagramLogo from '../../assets/img/instagram-logo.png'
 import WhatsAppLogo from '../../assets/img/whatsapp-logo.png'
 
+//preciso trabalar aqui, deixar fixo embaixo da tela, independente do tamanho dos arquivos contidos
+
+
 function Footer() {
   return (
     <footer className={styles.footer}>

@@ -21,6 +21,9 @@ export function CartProvider() {
   function finalizarCompra() {
     navigate('/finalizar-compra');
   }
+
+  //olhá isso, urgente!//
+  
   // function finalizarCompra() {
   //   if (isLoggedIn) {
   //     navigate('/finalizarCompra'); // Redireciona para a página de finalização de compra

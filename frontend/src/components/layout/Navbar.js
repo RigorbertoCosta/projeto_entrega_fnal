@@ -87,7 +87,6 @@ function Navbar() {
             </li>
           </>
         )}
-        {/* Adicionando o ícone do carrinho */}
         <li className={styles.cartIcon}>
           <Link to="/cart">
             <FontAwesomeIcon icon={faShoppingCart} />
