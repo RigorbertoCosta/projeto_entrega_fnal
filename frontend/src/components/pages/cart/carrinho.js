@@ -7,6 +7,8 @@ export function CartProvider() {
   const { carrinho, updateCarrinho } = useContext(Context);
   const token = localStorage.getItem("token")
   const navigate = useNavigate();
+  
+ 
 
   function esvaziarCarrinho() {
     localStorage.removeItem('carrinho');

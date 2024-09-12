@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './finalizar.css'
-import {ToastContainer, toast} from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './finalizar.css';
+import { Context } from '../../../context/UserContext';
 
 export default function FinalizarCompra() {
   const [carrinho, setCarrinho] = useState([]);
+  const {  updateCarrinho } = useContext(Context);
   const [formData, setFormData] = useState({
     rua: '',
     numero: '',
@@ -33,8 +35,12 @@ export default function FinalizarCompra() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Dados do Formulário:', formData);
+    
     localStorage.removeItem('carrinho');
     setCarrinho([]);
+    
+    toast.success('Seu pedido foi enviado com sucesso!');
+    updateCarrinho([])
     navigate('/');
   };
 
@@ -85,7 +91,7 @@ export default function FinalizarCompra() {
             required 
           />
         </div>
-        <button type="submit" >Finalizar Compra</button>
+        <button type="submit">Finalizar Compra</button>
       </form>
     </main>
   );
