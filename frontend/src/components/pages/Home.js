@@ -7,6 +7,8 @@ import api from "../../utils/api";
 import { Context } from "../../context/UserContext";
 import {ToastContainer, toast} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import './Home.css';
+
 
 const productsInEmphasis = [
   {

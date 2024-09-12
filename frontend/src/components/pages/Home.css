@@ -12,7 +12,7 @@
     }
     
     body {
-        background-color: #e6e5e7 ;
+        background-color: #ffffff ;
     }
     
     element.style {
@@ -26,5 +26,38 @@
         opacity: .9;
         transition: opacity .15s ease;
     }
+  
+    .card {
+        border: 2px solid #6f03aa;
+        border-radius: 8px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        height: 100%;
+    }
     
+    .card-img-top {
+        object-fit: cover;
+        height: 300px;
+    }
     
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+    
+    .card-text {
+        font-size: 1rem;
+        color: #555;
+    }
+   
+    .card-deck .card {
+        flex: 1;
+    }
+    
+      

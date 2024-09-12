@@ -7,7 +7,7 @@ import { Context } from '../../../context/UserContext';
 
 export default function FinalizarCompra() {
   const [carrinho, setCarrinho] = useState([]);
-  const {  updateCarrinho } = useContext(Context);
+  const { updateCarrinho } = useContext(Context);
   const [formData, setFormData] = useState({
     rua: '',
     numero: '',
@@ -35,18 +35,24 @@ export default function FinalizarCompra() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Dados do Formulário:', formData);
-    
-    localStorage.removeItem('carrinho');
-    setCarrinho([]);
-    
-    toast.success('Seu pedido foi enviado com sucesso!');
-    updateCarrinho([])
-    navigate('/');
+
+    toast.dark('Compra realizada com sucesso!')
+  
+    setTimeout(() => {
+      localStorage.removeItem('carrinho');
+      setCarrinho([]);
+      updateCarrinho([]);
+      navigate('/');
+    }, 2000);
   };
 
   return (
     <main className="finalizar-compra">
-      <ToastContainer />
+      <ToastContainer 
+      autoClose={1000}
+      hideProgressBar={true}
+      closeOnClick
+     />
       <h1>Finalizar Compra</h1>
       <p>
         {carrinho.length} itens em seu carrinho.<br />
@@ -96,4 +102,5 @@ export default function FinalizarCompra() {
     </main>
   );
 }
+
 

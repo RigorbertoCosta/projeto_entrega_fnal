@@ -32,3 +32,11 @@
     opacity: 0.7;
   }
   
+  .opinions {
+    margin-top: 20px;
+  }
+  
+  .opinions p {
+    margin: 5px 0;
+    font-style: italic;
+  }
