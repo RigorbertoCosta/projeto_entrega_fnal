@@ -14,7 +14,7 @@ function Message() {
       setType(type);
       setTimeout(() => {
         setVisibility(false);
-      }, 4000);
+      }, 1000);
     });
   }, []);
 

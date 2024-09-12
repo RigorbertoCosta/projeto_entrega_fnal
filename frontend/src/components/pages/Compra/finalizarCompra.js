@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './finalizar.css'
+import {ToastContainer, toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function FinalizarCompra() {
   const [carrinho, setCarrinho] = useState([]);
@@ -33,11 +35,12 @@ export default function FinalizarCompra() {
     console.log('Dados do Formulário:', formData);
     localStorage.removeItem('carrinho');
     setCarrinho([]);
-    navigate('/home');
+    navigate('/');
   };
 
   return (
     <main className="finalizar-compra">
+      <ToastContainer />
       <h1>Finalizar Compra</h1>
       <p>
         {carrinho.length} itens em seu carrinho.<br />
@@ -82,58 +85,7 @@ export default function FinalizarCompra() {
             required 
           />
         </div>
-
-        <h2>Dados para Pagamento</h2>
-        <div>
-          <label htmlFor="numeroCartao">Número do Cartão:</label>
-          <input 
-            type="text" 
-            id="numeroCartao" 
-            name="numeroCartao" 
-            value={formData.numeroCartao} 
-            onChange={handleInputChange} 
-            placeholder="0000 0000 0000 0000"
-            required 
-          />
-        </div>
-        <div>
-          <label htmlFor="nomeTitular">Nome do Titular do Cartão:</label>
-          <input 
-            type="text" 
-            id="nomeTitular" 
-            name="nomeTitular" 
-            value={formData.nomeTitular} 
-            onChange={handleInputChange} 
-            placeholder="Nome como no cartão"
-            required 
-          />
-        </div>
-        <div>
-          <label htmlFor="dataVencimento">Data de Vencimento:</label>
-          <input 
-            type="text" 
-            id="dataVencimento" 
-            name="dataVencimento" 
-            value={formData.dataVencimento} 
-            onChange={handleInputChange} 
-            placeholder="MM/AAAA"
-            required 
-          />
-        </div>
-        <div>
-          <label htmlFor="cvv">CVV:</label>
-          <input 
-            type="text" 
-            id="cvv" 
-            name="cvv" 
-            value={formData.cvv} 
-            onChange={handleInputChange} 
-            placeholder="Código de segurança"
-            required 
-          />
-        </div>
-
-        <button type="submit">Finalizar Compra</button>
+        <button type="submit" >Finalizar Compra</button>
       </form>
     </main>
   );
