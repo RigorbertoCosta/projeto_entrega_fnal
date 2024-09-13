@@ -4,6 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './finalizar.css';
 import { Context } from '../../../context/UserContext';
+import './finalizar.css'
 
 export default function FinalizarCompra() {
   const [carrinho, setCarrinho] = useState([]);
@@ -36,7 +37,7 @@ export default function FinalizarCompra() {
     e.preventDefault();
     console.log('Dados do Formulário:', formData);
 
-    toast.dark('Compra realizada com sucesso!')
+    toast.success('PARABÉNS, você está na moda!')
   
     setTimeout(() => {
       localStorage.removeItem('carrinho');
@@ -49,9 +50,9 @@ export default function FinalizarCompra() {
   return (
     <main className="finalizar-compra">
       <ToastContainer 
-      autoClose={1000}
-      hideProgressBar={true}
-      closeOnClick
+        autoClose={1000}
+        hideProgressBar={true}
+        closeOnClick
      />
       <h1>Finalizar Compra</h1>
       <p>
