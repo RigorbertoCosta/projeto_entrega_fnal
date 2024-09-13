@@ -4,19 +4,17 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './finalizar.css';
 import { Context } from '../../../context/UserContext';
-import './finalizar.css'
+import emailjs from 'emailjs-com';
 
 export default function FinalizarCompra() {
   const [carrinho, setCarrinho] = useState([]);
   const { updateCarrinho } = useContext(Context);
   const [formData, setFormData] = useState({
+    email:'',
     rua: '',
     numero: '',
     cidade: '',
-    numeroCartao: '',
-    nomeTitular: '',
-    dataVencimento: '',
-    cvv: ''
+    
   });
   const navigate = useNavigate();
 
@@ -33,12 +31,44 @@ export default function FinalizarCompra() {
     }));
   };
 
+  const sendEmail = () => {
+    const templateParams = {
+      from_name: 'Rigoberto',
+      to_name: 'RR_StreatWear',
+      subject: 'Nova Compra Finalizada',
+      message: `
+        Nova compra finalizada!\n\n
+        Itens:\n
+        ${carrinho.map(item => `Produto: ${item.id}, Quantidade: ${item.quantity}, Preço: R$ ${item.price}`).join('\n')}\n\n
+        Total: R$ ${carrinho.reduce((acc, item) => acc + (item.quantity * item.price), 0).toFixed(2)}\n\n
+        Dados de Entrega:\n
+        Rua: ${formData.rua}\n
+        Número: ${formData.numero}\n
+        Cidade: ${formData.cidade}\n\n
+        E-mail do Cliente: ${formData.email}
+      `
+    };
+
+    emailjs.send(
+      'service_z07l8ib',
+      'template_9yowm9j',
+      templateParams,
+      'o4TEQcfKqpSd2OCjd'
+    ).then(response => {
+      console.log('E-mail enviado com sucesso!', response);
+    }).catch(err => {
+      console.error('Erro ao enviar o e-mail:', err);
+    });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Dados do Formulário:', formData);
 
-    toast.success('PARABÉNS, você está na moda!')
-  
+    sendEmail();
+
+    toast.success('PARABÉNS, você está na moda!');
+
     setTimeout(() => {
       localStorage.removeItem('carrinho');
       setCarrinho([]);
@@ -62,6 +92,18 @@ export default function FinalizarCompra() {
 
       <form onSubmit={handleSubmit}>
         <h2>Dados para Entrega</h2>
+        <div>
+          <label htmlFor="email">Email:</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            value={formData.email} 
+            onChange={handleInputChange} 
+            placeholder="Digite seu e-mail"
+            required 
+          />
+        </div>
         <div>
           <label htmlFor="rua">Rua:</label>
           <input 
