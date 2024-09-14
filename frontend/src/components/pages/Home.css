@@ -38,6 +38,11 @@ div .carousel-inner {
 .card-img-top {
     object-fit: cover;
     height: 300px;
+    transition: transform 0.3s ease;
+}
+
+.card-img-top:hover {
+    transform: scale(1.5);
 }
     
 .card-body {
@@ -59,5 +64,5 @@ div .carousel-inner {
 .card-deck .card {
     flex: 1;
 }
-    
-      
+
+        
