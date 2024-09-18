@@ -1,22 +1,22 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import React from 'react'
-import Navbar from './components/layout/Navbar'
-import Footer from './components/layout/Footer'
-import Message from './components/layout/Message'
-import Container from './components/layout/Container'
-import Home from './components/pages/Home'
-import Login from './components/pages/Auth/Login'
-import Register from './components/pages/Auth/register'
-import Profile from './components/pages/User/Profile'
-import { UserProvider } from './context/UserContext'
-import AddProduct from './components/pages/Product/AddProduct'
-import EditProduct from './components/pages/Product/EditProduct'
-import ProductDetails from './components/pages/Product/ProductDetails'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from "react";
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
+import Message from "./components/layout/Message";
+import Container from "./components/layout/Container";
+import Home from "./components/pages/Home";
+import Login from "./components/pages/Auth/Login";
+import Register from "./components/pages/Auth/register";
+import Profile from "./components/pages/User/Profile";
+import { UserProvider } from "./context/UserContext";
+import AddProduct from "./components/pages/Product/AddProduct";
+import EditProduct from "./components/pages/Product/EditProduct";
+import ProductDetails from "./components/pages/Product/ProductDetails";
 // import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
-import Sobre from './components/pages/Auth/sobre'
-import {CartProvider} from './components/pages/cart/carrinho'
-import FinalizarCompra from './components/pages/Compra/finalizarCompra';
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import Sobre from "./components/pages/Auth/sobre";
+import { CartProvider } from "./components/pages/cart/carrinho";
+import FinalizarCompra from "./components/pages/Compra/finalizarCompra";
 
 function App() {
   return (
@@ -26,7 +26,9 @@ function App() {
         <Message />
         <Container>
           <Routes>
-            <Route path="/login" element={<Login />}> </Route>
+            <Route path="/login" element={<Login />}>
+              {" "}
+            </Route>
             <Route path="/register" element={<Register />}></Route>
             <Route path="/user/profile" element={<Profile />}></Route>
             <Route path="/product/add" element={<AddProduct />}></Route>
@@ -36,13 +38,12 @@ function App() {
             <Route path="/Sobre" element={<Sobre />}></Route>
             <Route path="/cart" element={<CartProvider />}></Route>
             <Route path="/finalizar-compra" element={<FinalizarCompra />} />
-
           </Routes>
         </Container>
         <Footer />
       </UserProvider>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,42 +1,42 @@
-const mongoose = require('../db/conn')
-const {Schema} = mongoose
+const mongoose = require("../db/conn");
+const { Schema } = mongoose;
 
 const Product = mongoose.model(
-    'Product',
-    new Schema(
+  "Product",
+  new Schema(
     {
-        nome: {
-            type: String,
-            required: true
-        },
+      nome: {
+        type: String,
+        required: true,
+      },
 
-        categoria: {
-            type: String,
-            required: true
-        },
+      categoria: {
+        type: String,
+        required: true,
+      },
 
-        preco: {
-            type: Number,
-            required: true
-        },
+      preco: {
+        type: Number,
+        required: true,
+      },
 
-        nota: {
-            type: Number,
-            required: false
-        },
+      nota: {
+        type: Number,
+        required: false,
+      },
 
-        image: {
-            type: String,
-            required: false
-        }, 
+      image: {
+        type: String,
+        required: false,
+      },
 
-        marca: {
-            type: String,
-            required: true
-        }, 
+      marca: {
+        type: String,
+        required: true,
+      },
     },
-    { timestamps: true },
-    )
-)
+    { timestamps: true }
+  )
+);
 
-module.exports = Product
+module.exports = Product;

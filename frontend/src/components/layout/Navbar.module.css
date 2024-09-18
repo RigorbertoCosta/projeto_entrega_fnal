@@ -1,73 +1,71 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 1em 1.5em;
-    width: 100%;
-    background-color: #080202;
-    color: #8d169d;
-  }
-  
-  .navbar_logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .navbar_logo img {
-    width: 75px;
-    margin-right: .8em;
-    align-items: center;
-    
-    
-  }
-  
-  .navbar ul {
-    display: flex;
-    align-items: center;
-    list-style: none;
-  }
-  
-  .navbar li,
-  .navbar a {
-    text-decoration: none;
-    color: #8d169d;
-    font-weight: bold;
-    cursor: pointer;
-    transition: .5s;
-    padding: .5em .8em;
-    border-radius: 5px;
-    text-align: center;
-  }
-  
-  .navbar li:hover {
-    background-color: #8d169d;
-    color: #FFF;
-  }
-  
-  .navbar li:hover > a {
-    color: #FFF;
-  }
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 1.5em;
+  width: 100%;
+  background-color: #080202;
+  color: #8d169d;
+}
 
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
+.navbar_logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar_logo img {
+  width: 75px;
+  margin-right: 0.8em;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.navbar li,
+.navbar a {
+  text-decoration: none;
+  color: #8d169d;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.5s;
+  padding: 0.5em 0.8em;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.navbar li:hover {
+  background-color: #8d169d;
+  color: #fff;
+}
+
+.navbar li:hover > a {
+  color: #fff;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f8f9fa;
 }
 .about-header {
-    background-color: #7c20be;
-    color: white;
-    padding: 50px 0;
-    text-align: center;
+  background-color: #7c20be;
+  color: white;
+  padding: 50px 0;
+  text-align: center;
 }
 .about-content {
-    padding: 50px 15px;
+  padding: 50px 15px;
 }
 .about-content h2 {
-    font-weight: bold;
-    margin-bottom: 30px;
+  font-weight: bold;
+  margin-bottom: 30px;
 }
 .about-content p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #6c757d;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #6c757d;
 }
 
 .cartIcon {

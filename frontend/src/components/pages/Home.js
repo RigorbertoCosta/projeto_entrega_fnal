@@ -5,10 +5,9 @@ import carrossel2 from "./img/carrossel2.jpg";
 import carrossel3 from "./img/carrossel3.jpg";
 import api from "../../utils/api";
 import { Context } from "../../context/UserContext";
-import {ToastContainer, toast} from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-import './Home.css';
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./Home.css";
 
 const productsInEmphasis = [
   {
@@ -50,67 +49,63 @@ const productsInEmphasis = [
 ];
 
 function Home() {
-    const { updateCarrinho } = useContext(Context)
+  const { updateCarrinho } = useContext(Context);
 
-    const [allProducts, setAllProducts] = useState([])
-    const [productsToRender, setProductsToRender] = useState([])
-    const [filter, setFilter] = useState('TODOS')
+  const [allProducts, setAllProducts] = useState([]);
+  const [productsToRender, setProductsToRender] = useState([]);
+  const [filter, setFilter] = useState("TODOS");
 
-    async function getProductsInDb() {
-        try {
-            const {data: productsInDb} = await api.get('/products')
+  async function getProductsInDb() {
+    try {
+      const { data: productsInDb } = await api.get("/products");
 
-            setProductsToRender(productsInDb)
-            setAllProducts(productsInDb)
-        } catch (error) {
-            console.log(error)
-        }
+      setProductsToRender(productsInDb);
+      setAllProducts(productsInDb);
+    } catch (error) {
+      console.log(error);
     }
+  }
 
-    function adicionarAoCarrinho(produto) {
-        let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-        let achado = false;
-        for (let i = 0; i < carrinho.length; i++) {
-            if (carrinho[i].id == produto.id) {
-                carrinho[i].quantity++;
-                achado = true;
-                break;
-            }
-        }
-        if (!achado) {
-            const item = { ...produto, quantity: 1 };
-            carrinho.push(item);
-        }
-        updateCarrinho(carrinho);
-       toast.success('Adicionado')
+  function adicionarAoCarrinho(produto) {
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    let achado = false;
+    for (let i = 0; i < carrinho.length; i++) {
+      if (carrinho[i].id == produto.id) {
+        carrinho[i].quantity++;
+        achado = true;
+        break;
+      }
     }
-
-    useEffect(() => {
-        getProductsInDb()
-    }, [])
-
-    const handleFilterChange = (e) => {
-        setFilter(e.target.value);
-    };
-
-    const handleApplyFilter = () => {
-        const filteredProducts = filter === 'TODOS' 
-        ? allProducts 
-        : allProducts.filter(product => 
-            product.type === filter.toUpperCase()
-        );
-
-
-        setProductsToRender(filteredProducts)
+    if (!achado) {
+      const item = { ...produto, quantity: 1 };
+      carrinho.push(item);
     }
+    updateCarrinho(carrinho);
+    toast.success("Adicionado");
+  }
+
+  useEffect(() => {
+    getProductsInDb();
+  }, []);
+
+  const handleFilterChange = (e) => {
+    setFilter(e.target.value);
+  };
+
+  const handleApplyFilter = () => {
+    const filteredProducts =
+      filter === "TODOS"
+        ? allProducts
+        : allProducts.filter(
+            (product) => product.type === filter.toUpperCase()
+          );
+
+    setProductsToRender(filteredProducts);
+  };
 
   return (
     <div>
-      <ToastContainer 
-        autoClose={1000}
-        hideProgressBar={true}
-        closeOnClick
-      />
+      <ToastContainer autoClose={1000} hideProgressBar={true} closeOnClick />
       <div
         id="carouselExampleAutoplaying"
         className="carousel slide"
@@ -178,7 +173,11 @@ function Home() {
                   <p className="card-text">
                     R$ {produto.price.toFixed(2).replace(".", ",")}
                   </p>
-                  <a href="#" className="btn btn-primary" onClick={() => adicionarAoCarrinho(produto)}>
+                  <a
+                    href="#"
+                    className="btn btn-primary"
+                    onClick={() => adicionarAoCarrinho(produto)}
+                  >
                     Comprar
                   </a>
                 </div>
@@ -200,7 +199,11 @@ function Home() {
                 <label htmlFor="categorySelect" className="form-label">
                   Categoria
                 </label>
-                <select className="form-select" id="categorySelect" onChange={handleFilterChange}>
+                <select
+                  className="form-select"
+                  id="categorySelect"
+                  onChange={handleFilterChange}
+                >
                   <option value="TODOS">Todos</option>
                   <option value="CAMISA">Camisetas</option>
                   <option value="CALCA">Calças</option>
@@ -209,7 +212,11 @@ function Home() {
                   <option value="BERMUDA">Bermudas</option>
                 </select>
               </div>
-              <button type="button" onClick={handleApplyFilter} className="btn btn-primary">
+              <button
+                type="button"
+                onClick={handleApplyFilter}
+                className="btn btn-primary"
+              >
                 Aplicar Filtros
               </button>
             </form>
@@ -217,28 +224,33 @@ function Home() {
 
           <div className="col-12 col-md-8 col-lg-9">
             <div className="row">
-              {productsToRender.map(
-                (produto) => (
-                  <div className="col-sm-6 col-md-4 col-lg-3 mb-4" key={produto.id}>
-                    <div className="card">
-                      <img
-                        src={produto.thumbnail}
-                        className="card-img-top"
-                        alt={`Produto ${produto.title}`}
-                      />
-                      <div className="card-body">
-                        <h5 className="card-title">{produto.title}</h5>
-                        <p className="card-text">
-                            R$ {produto.price.toFixed(2).replace(".", ",")}
-                        </p>
-                        <a href="#" className="btn btn-primary" onClick={() => adicionarAoCarrinho(produto)}>
-                          Comprar
-                        </a>
-                      </div>
+              {productsToRender.map((produto) => (
+                <div
+                  className="col-sm-6 col-md-4 col-lg-3 mb-4"
+                  key={produto.id}
+                >
+                  <div className="card">
+                    <img
+                      src={produto.thumbnail}
+                      className="card-img-top"
+                      alt={`Produto ${produto.title}`}
+                    />
+                    <div className="card-body">
+                      <h5 className="card-title">{produto.title}</h5>
+                      <p className="card-text">
+                        R$ {produto.price.toFixed(2).replace(".", ",")}
+                      </p>
+                      <a
+                        href="#"
+                        className="btn btn-primary"
+                        onClick={() => adicionarAoCarrinho(produto)}
+                      >
+                        Comprar
+                      </a>
                     </div>
                   </div>
-                )
-              )}
+                </div>
+              ))}
             </div>
           </div>
         </div>

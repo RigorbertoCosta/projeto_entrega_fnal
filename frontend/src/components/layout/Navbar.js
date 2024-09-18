@@ -5,7 +5,6 @@
 // import { Context } from '../../context/UserContext'
 // import 'bootstrap/dist/css/bootstrap.min.css'
 
-
 // function Navbar() {
 //   const { authenticated, logout } = useContext(Context)
 
@@ -13,16 +12,16 @@
 //     <nav className={styles.navbar}>
 
 //       <div className={styles.navbar_logo}>
-//         <Link to="/"><img src={Logo} alt="RR Street Wear" /></Link>       
+//         <Link to="/"><img src={Logo} alt="RR Street Wear" /></Link>
 //       </div>
-      
+
 //       <ul>
 //         {/* <li> */}
 //           {/* <Link to="/">Casdastrar</Link> */}
 //         {/* </li> */}
 //         {authenticated ? (
 //           <>
-            
+
 //             <li>
 //               <Link to="/user/profile">Meu Perfil</Link>
 //             </li>
@@ -46,26 +45,28 @@
 //   )
 // }
 
-// export default 
+// export default
 
-import { Link } from 'react-router-dom'
-import React, { useContext, useState } from 'react'
-import styles from './Navbar.module.css'
-import Logo from '../../assets/img/logo_n.png'
-import { Context } from '../../context/UserContext'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import styles from "./Navbar.module.css";
+import Logo from "../../assets/img/logo_n.png";
+import { Context } from "../../context/UserContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Navbar() {
-  const { authenticated, logout, carrinho } = useContext(Context)
+  const { authenticated, logout, carrinho } = useContext(Context);
 
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbar_logo}>
-        <Link to="/"><img src={Logo} alt="RR Street Wear" /></Link>       
+        <Link to="/">
+          <img src={Logo} alt="RR Street Wear" />
+        </Link>
       </div>
-      
+
       <ul>
         {authenticated ? (
           <>
@@ -97,7 +98,7 @@ function Navbar() {
         </li>
       </ul>
     </nav>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;

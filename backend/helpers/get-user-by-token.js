@@ -1,20 +1,18 @@
-const jwt = require('jsonwebtoken')
-const User = require("../models/User")
-
+const jwt = require("jsonwebtoken");
+const User = require("../models/User");
 
 const getUserByToken = async (token) => {
+  if (!token) {
+    return res.status(401).json({ message: "Acesso negado!" });
+  }
 
-    if (!token) {
-        return res.status(401).json({ message: 'Acesso negado!' })
-    }
+  const decoded = jwt.verify(token, "nossosecret");
 
-    const decoded = jwt.verify(token, 'nossosecret')
+  const userId = decoded.id;
 
-    const userId = decoded.id
+  const user = await User.findOne({ _id: userId }).lean();
 
-    const user = await User.findOne({ _id: userId }).lean()
+  return user;
+};
 
-    return user
-}
-
-module.exports = getUserByToken
+module.exports = getUserByToken;
