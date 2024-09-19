@@ -188,3 +188,31 @@
 .decrease-button:hover {
   background-color: #e53935;
 }
+
+.tamanho-options {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.tamanho-btn {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  color: black;
+}
+
+.tamanho-btn.btn-primary {
+  background-color: #007bff !important;
+  color: white !important;
+}
+
+.tamanho-btn.btn-outline-secondary {
+  background-color: transparent !important;
+  color: black !important;
+}
+
+.tamanho-btn:hover {
+  background-color: #334ee6;
+}

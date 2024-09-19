@@ -48,6 +48,7 @@ const productsInEmphasis = [
   },
 ];
 
+
 function Home() {
   const { updateCarrinho } = useContext(Context);
 
@@ -171,8 +172,11 @@ function Home() {
                 <div className="card-body">
                   <h5 className="card-title">{produto.title}</h5>
                   <p className="card-text">
+                    <p className="card-text">Marca: {produto.brand}</p>
+                      <p className="card-text">Avaliação: {produto.rating}⭐</p>
                     R$ {produto.price.toFixed(2).replace(".", ",")}
                   </p>
+
                   <a
                     href="#"
                     className="btn btn-primary"
@@ -238,6 +242,8 @@ function Home() {
                     <div className="card-body">
                       <h5 className="card-title">{produto.title}</h5>
                       <p className="card-text">
+                      <p className="card-text">Marca: {produto.brand}</p>
+                      <p className="card-text">Avaliação: {produto.rating}⭐</p>
                         R$ {produto.price.toFixed(2).replace(".", ",")}
                       </p>
                       <a

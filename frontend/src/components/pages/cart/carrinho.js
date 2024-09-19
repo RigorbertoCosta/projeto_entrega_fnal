@@ -52,6 +52,32 @@ export function CartProvider() {
     }
   }
 
+  function atualizarTamanho(id, tamanho) {
+    const novosItens = carrinho.map((item) => {
+      if (item.id === id) {
+        return { ...item, tamanho };
+      }
+      return item;
+    });
+  
+    localStorage.setItem("carrinho", JSON.stringify(novosItens));
+    updateCarrinho(novosItens);
+  }
+
+  function finalizarCompra() {
+    const todosItensComTamanho = carrinho.every(item => item.tamanho);
+  
+    if (todosItensComTamanho) {
+      if (token) {
+        navigate("/finalizar-Compra");
+      } else {
+        navigate("/login");
+      }
+    } else {
+      alert('Por favor, selecione um tamanho para todos os produtos no carrinho.');
+    }
+  }
+
   return (
     <main className="cart-provider">
       <h1>Carrinho</h1>
@@ -63,6 +89,19 @@ export function CartProvider() {
           <div className="item-details">
             <div className="float-left">
               <strong>{item.title}</strong>
+              <br />
+              <h6>Tamanho:</h6>
+              <div className="tamanho-options">
+                {['P', 'M', 'G', 'GG'].map(tamanho => (
+                <button
+                  key={tamanho}
+                  className={`btn ${item.tamanho === tamanho ? 'btn-primary' : 'btn-outline-secondary'} tamanho-btn`}
+                  onClick={() => atualizarTamanho(item.id, tamanho)}
+                >
+                  {tamanho}
+                </button>
+                  ))}
+              </div>
               <br />
               Qtd: {item.quantity}
               <button
