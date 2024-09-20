@@ -29,7 +29,17 @@ export default function FinalizarCompra() {
       [name]: value,
     }));
   };
-  
+
+  const validarCompra = () => {
+    for (const item of carrinho) {
+      if (item.type !== "BONE" && !item.tamanho) {
+        alert(`Por favor, escolha um tamanho para o produto: ${item.title}`);
+        return false; // Indica que a validação falhou
+      }
+    }
+    return true; // Se tudo estiver válido
+  };
+
   const sendEmail = () => {
     const templateParams = {
       from_name: "Rigoberto",
@@ -54,7 +64,6 @@ export default function FinalizarCompra() {
         E-mail do Cliente: ${formData.email}
       `,
     };
-  
     emailjs
       .send(
         "service_z07l8ib",
@@ -69,11 +78,14 @@ export default function FinalizarCompra() {
         console.error("Erro ao enviar o e-mail:", err);
       });
   };
-  
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Dados do Formulário:", formData);
+
+    if (!validarCompra()) {
+      return;
+    }
 
     sendEmail();
 
@@ -87,12 +99,17 @@ export default function FinalizarCompra() {
     }, 2000);
   };
 
+  const quantidadeTotal = carrinho.reduce(
+    (acc, item) => acc + item.quantity,
+    0
+  );
+
   return (
     <main className="finalizar-compra">
       <ToastContainer autoClose={1000} hideProgressBar={true} closeOnClick />
       <h1>Finalizar Compra</h1>
       <p>
-        {carrinho.length} itens em seu carrinho.
+        {quantidadeTotal} itens em seu carrinho.
         <br />
         Total: R${" "}
         {carrinho
@@ -151,6 +168,7 @@ export default function FinalizarCompra() {
           />
         </div>
         <button type="submit">Finalizar Compra</button>
+        <button onClick={() => navigate("/cart")}>Voltar ao Carrinho</button>
         {/* <a href="https://api.whatsapp.com/send?phone=5579988072113&text=Compra%20finalizada!" style={{ textDecoration: 'none', color: 'inherit' }}>
           <button type="button">Finalizar Compra</button>
         </a> */}

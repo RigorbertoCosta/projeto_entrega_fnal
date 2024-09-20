@@ -13,6 +13,7 @@ const productsInEmphasis = [
   {
     id: 14,
     title: "Camisa Santa Cruz",
+    type:'CAMISA',
     price: 59.9,
     rating: 5,
     brand: "Santa Cruz",
@@ -22,6 +23,7 @@ const productsInEmphasis = [
   {
     id: 10,
     title: "Calça Cargo HIGH",
+    type:'CALCA',
     price: 109.9,
     rating: 5,
     brand: "High",
@@ -31,6 +33,7 @@ const productsInEmphasis = [
   {
     id: 7,
     title: "Boné Five Panel",
+    type:'BONE',
     price: 59.9,
     rating: 5,
     brand: "High",
@@ -40,6 +43,7 @@ const productsInEmphasis = [
   {
     id: 18,
     title: "Moletom THRASHER",
+    type:'MOLETOM',
     price: 129.9,
     rating: 5,
     brand: "Thrasher",

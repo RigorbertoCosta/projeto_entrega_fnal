@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { Context } from "../../../context/UserContext";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./cartProvider.css";
 
 export function CartProvider() {
@@ -45,10 +47,20 @@ export function CartProvider() {
   }
 
   function finalizarCompra() {
-    if (token) {
-      navigate("/finalizar-Compra");
+    const todosItensComTamanho = carrinho.every((item) => {
+      return (
+        item.type === "BONE" || (item.tamanho && item.tamanho.trim() !== "")
+      );
+    });
+
+    if (todosItensComTamanho) {
+      if (token) {
+        navigate("/finalizar-Compra");
+      } else {
+        navigate("/login");
+      }
     } else {
-      navigate("/login");
+      toast.error("Por favor, selecione um tamanho para todos os produtos.");
     }
   }
 
@@ -59,27 +71,14 @@ export function CartProvider() {
       }
       return item;
     });
-  
+
     localStorage.setItem("carrinho", JSON.stringify(novosItens));
     updateCarrinho(novosItens);
   }
 
-  function finalizarCompra() {
-    const todosItensComTamanho = carrinho.every(item => item.tamanho);
-  
-    if (todosItensComTamanho) {
-      if (token) {
-        navigate("/finalizar-Compra");
-      } else {
-        navigate("/login");
-      }
-    } else {
-      alert('Por favor, selecione um tamanho para todos os produtos no carrinho.');
-    }
-  }
-
   return (
     <main className="cart-provider">
+      <ToastContainer autoClose={3000} hideProgressBar={true} closeOnClick />
       <h1>Carrinho</h1>
       {carrinho.map((item) => (
         <div className="item" key={item.id}>
@@ -92,15 +91,23 @@ export function CartProvider() {
               <br />
               <h6>Tamanho:</h6>
               <div className="tamanho-options">
-                {['P', 'M', 'G', 'GG'].map(tamanho => (
-                <button
-                  key={tamanho}
-                  className={`btn ${item.tamanho === tamanho ? 'btn-primary' : 'btn-outline-secondary'} tamanho-btn`}
-                  onClick={() => atualizarTamanho(item.id, tamanho)}
-                >
-                  {tamanho}
-                </button>
-                  ))}
+                {item.type === "BONE" ? (
+                  <span>Produto: {item.title} - Tamanho único</span>
+                ) : (
+                  ["P", "M", "G", "GG"].map((tamanho) => (
+                    <button
+                      key={tamanho}
+                      className={`btn ${
+                        item.tamanho === tamanho
+                          ? "btn-primary"
+                          : "btn-outline-secondary"
+                      } tamanho-btn`}
+                      onClick={() => atualizarTamanho(item.id, tamanho)}
+                    >
+                      {tamanho}
+                    </button>
+                  ))
+                )}
               </div>
               <br />
               Qtd: {item.quantity}
