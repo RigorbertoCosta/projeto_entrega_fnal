@@ -13,7 +13,7 @@ const productsInEmphasis = [
   {
     id: 14,
     title: "Camisa Santa Cruz",
-    type:'CAMISA',
+    type: "CAMISA",
     price: 59.9,
     rating: 5,
     brand: "Santa Cruz",
@@ -23,7 +23,7 @@ const productsInEmphasis = [
   {
     id: 10,
     title: "Calça Cargo HIGH",
-    type:'CALCA',
+    type: "CALCA",
     price: 109.9,
     rating: 5,
     brand: "High",
@@ -33,7 +33,7 @@ const productsInEmphasis = [
   {
     id: 7,
     title: "Boné Five Panel",
-    type:'BONE',
+    type: "BONE",
     price: 59.9,
     rating: 5,
     brand: "High",
@@ -43,7 +43,7 @@ const productsInEmphasis = [
   {
     id: 18,
     title: "Moletom THRASHER",
-    type:'MOLETOM',
+    type: "MOLETOM",
     price: 129.9,
     rating: 5,
     brand: "Thrasher",
@@ -51,7 +51,6 @@ const productsInEmphasis = [
       "data:image/jpeg;base64,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",
   },
 ];
-
 
 function Home() {
   const { updateCarrinho } = useContext(Context);
@@ -177,7 +176,7 @@ function Home() {
                   <h5 className="card-title">{produto.title}</h5>
                   <p className="card-text">
                     <p className="card-text">Marca: {produto.brand}</p>
-                      <p className="card-text">Avaliação: {produto.rating}⭐</p>
+                    <p className="card-text">Avaliação: {produto.rating}⭐</p>
                     R$ {produto.price.toFixed(2).replace(".", ",")}
                   </p>
 
@@ -246,8 +245,10 @@ function Home() {
                     <div className="card-body">
                       <h5 className="card-title">{produto.title}</h5>
                       <p className="card-text">
-                      <p className="card-text">Marca: {produto.brand}</p>
-                      <p className="card-text">Avaliação: {produto.rating}⭐</p>
+                        <p className="card-text">Marca: {produto.brand}</p>
+                        <p className="card-text">
+                          Avaliação: {produto.rating}⭐
+                        </p>
                         R$ {produto.price.toFixed(2).replace(".", ",")}
                       </p>
                       <a

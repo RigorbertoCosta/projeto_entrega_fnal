@@ -40,6 +40,10 @@ function Login() {
       <p>
         Não tem conta? <Link to="/register">Clique aqui.</Link>
       </p>
+      <p>"Olá! Que bom que você está aqui! Pronto para explorar tudo o que temos a oferecer?"</p>
+      <p>Suas informações estão seguras conosco.</p>
+      
+      
     </section>
   );
 }
