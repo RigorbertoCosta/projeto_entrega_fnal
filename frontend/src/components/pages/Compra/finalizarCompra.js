@@ -29,7 +29,7 @@ export default function FinalizarCompra() {
       [name]: value,
     }));
   };
-
+  
   const sendEmail = () => {
     const templateParams = {
       from_name: "Rigoberto",
@@ -41,7 +41,7 @@ export default function FinalizarCompra() {
         ${carrinho
           .map(
             (item) =>
-              `Produto: ${item.id}, Quantidade: ${item.quantity}, Preço: R$ ${item.price}`
+              `Produto: ${item.title} (ID: ${item.id}), Tamanho: ${item.tamanho}, Quantidade: ${item.quantity}, Preço: R$ ${item.price}`
           )
           .join("\n")}\n\n
         Total: R$ ${carrinho
@@ -54,7 +54,7 @@ export default function FinalizarCompra() {
         E-mail do Cliente: ${formData.email}
       `,
     };
-
+  
     emailjs
       .send(
         "service_z07l8ib",
@@ -69,6 +69,7 @@ export default function FinalizarCompra() {
         console.error("Erro ao enviar o e-mail:", err);
       });
   };
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
