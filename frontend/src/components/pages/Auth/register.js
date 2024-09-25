@@ -138,7 +138,6 @@ function Register() {
           placeholder="Digite o Estado"
           value={user.uf}
           handleOnChange={handleChange}
-          //readonly
         />
         <Input
           text="Telefone"
