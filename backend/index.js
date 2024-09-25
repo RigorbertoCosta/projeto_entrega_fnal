@@ -9,8 +9,6 @@ app.use(cors())
 
 app.use(express.static('public'))
 
-//Routes
-
 const UserRoutes = require('./routes/UserRoutes')
 const ProductRoutes = require('./routes/ProductRoutes')
 

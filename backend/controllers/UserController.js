@@ -47,7 +47,7 @@ module.exports = class UserController {
 
     if (userExists) {
       res.status(422).json({
-        message: "Por favor, utilize outro e-mail!",
+        message: "E-mail já cadastrado. Por favor, utilize outro e-mail!",
       });
       return;
     }

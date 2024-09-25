@@ -27,12 +27,7 @@ module.exports = class ProductController {
       res.status(422).json({ message: "A marca é obrigatório!" });
       return;
     }
-
-    // if(images.length === 0){
-    //     res.status(422).json({message: "A imagem é obrigatório!"})
-    //     return
-    // }
-
+    
     const product = new Product({
       nome,
       nota,
@@ -41,11 +36,6 @@ module.exports = class ProductController {
       marca,
       image: "",
     });
-
-    // images.map((image) => {
-    //     product.images.push(image.filenome)
-    // })
-
     try {
       const newProduct = await product.save();
       res.status(201).json({
