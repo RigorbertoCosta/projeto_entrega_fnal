@@ -34,10 +34,10 @@ export default function FinalizarCompra() {
     for (const item of carrinho) {
       if (item.type !== "BONE" && !item.tamanho) {
         alert(`Por favor, escolha um tamanho para o produto: ${item.title}`);
-        return false; // Indica que a validação falhou
+        return false;
       }
     }
-    return true; // Se tudo estiver válido
+    return true;
   };
 
   const sendEmail = () => {

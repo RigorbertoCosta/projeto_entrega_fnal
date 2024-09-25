@@ -12,3 +12,20 @@ root.render(
     <App />
   </React.StrictMode>
 );
+
+// import React from "react";
+// import ReactDOM from "react-dom/client";
+// import "./index.css";
+// import App from "./App";
+// import "bootstrap/dist/css/bootstrap.min.css";
+// import TamanhoIdeal from './components/pages/tamanhoIdeal';
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(
+//   <React.StrictMode>
+//     <div className="d-flex justify-content-center align-items-center vh-100">
+//       <TamanhoIdeal />
+//     </div>
+//     <App />
+//   </React.StrictMode>
+// );

@@ -8,6 +8,7 @@ import { Context } from "../../context/UserContext";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./Home.css";
+import TamanhoIdeal from "./tamanhoIdeal";
 
 const productsInEmphasis = [
   {
@@ -199,6 +200,11 @@ function Home() {
         style={{ backgroundColor: "rgba(255, 255, 255, 0.856)" }}
       >
         <div className="row">
+          <p></p>
+          <div>
+            <TamanhoIdeal />
+          </div>
+          <p></p>
           <div className="col-12 col-md-4 col-lg-3 mb-4">
             <h4>Filtrar Produtos</h4>
             <form>
