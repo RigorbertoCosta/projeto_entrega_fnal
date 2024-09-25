@@ -52,9 +52,9 @@ const TamanhoIdeal = () => {
   };
 
   return (
-    <div 
-        className="col-12 text-center mb-4"
-        style={{ backgroundColor: "white", color: "black" }}
+    <div
+      className="col-12 text-center mb-4"
+      style={{ backgroundColor: "white", color: "black" }}
     >
       <h2>Descubra o tamanho ideal!</h2>
       <div className="form-group mb-3">
